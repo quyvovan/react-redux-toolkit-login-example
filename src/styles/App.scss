@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+html {
+    font-size: 14px;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 1rem;
+}
+.mcv {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.color-gray {
+    color: #878a99 !important;
+}
+a {
+    color: #7f56d9;
+}
+input[type="checkbox" i] {
+    background-color: initial;
+    cursor: default;
+    appearance: auto;
+    box-sizing: border-box;
+    margin: 3px 3px 3px 4px;
+    padding: initial;
+    border: initial;
+}
+.btn-primary {
+    background: #7f56d9;
+    border-color: #7f56d9;
+    border-radius: 4px;
+    &:hover {
+        background: #7f56d9;
+        border-color: #7f56d9;
+    }
+}
+.login,
+.logout,
+.forgot {
+    .card {
+        .card-body {
+            padding: 120px 3.42rem;
+            .logo {
+                position: absolute;
+                left: 3.42rem;
+                top: 48px;
+            }
+        }
+        .card-image {
+            position: relative;
+        }
+        .card-head {
+            .title {
+                color: #7f56d9;
+                font-size: 18px;
+                letter-spacing: 0.2px;
+                margin-bottom: 5px;
+            }
+        }
+        form {
+            .form-group {
+                label {
+                    font-weight: 500;
+                }
+                .form-control {
+                    min-height: 38px;
+                }
+            }
+        }
+        .img-email {
+            svg,
+            path {
+                fill: #7f56d9 !important;
+            }
+        }
+    }
+}
+.text-decoration-underline {
+    text-decoration: underline !important;
+}
+.forgot {
+    .card {
+        .card-body {
+            padding: 48px 3.42rem;
+            .logo {
+                top: initial;
+            }
+        }
+    }
+}
+footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    font-size: 1rem;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.1px;
+    color: rgba(255, 255, 255, 0.5);
+}
