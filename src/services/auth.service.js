@@ -6,13 +6,6 @@ const register = (email, password) => {
   return axios.post(API_URL + "register", {
     email,
     password,
-    returnSecureToken: true,
-  }, { 
-    headers: {
-      'Access-Control-Allow-Origin': 'http://localhost:8081/',
-      'X-CSRF-Token': 'CIwNZNlR4XbisJF39I8yWnWX9wX4WFoz',
-      'Access-Control-Allow-Credentials': true
-    } 
   });
 };
 

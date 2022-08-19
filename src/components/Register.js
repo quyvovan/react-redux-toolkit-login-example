@@ -6,7 +6,7 @@ import * as Yup from "yup";
 import { register } from "../slices/auth";
 import { clearMessage } from "../slices/message";
 
-const Register = () => {
+const Register = (props) => {
   const [successful, setSuccessful] = useState(false);
 
   const { message } = useSelector((state) => state.message);
@@ -57,6 +57,8 @@ const Register = () => {
       .unwrap()
       .then(() => {
         setSuccessful(true);
+        props.history.push("/");
+        window.location.reload();
       })
       .catch(() => {
         setSuccessful(false);
@@ -93,58 +95,54 @@ const Register = () => {
                 onSubmit={handleRegister}
               >
                 <Form>
-                  {!successful && (
-                    <div>
-                      <div className="form-group">
-                        <label htmlFor="username">Username</label>
-                        <Field 
-                          name="username" 
-                          type="text" 
-                          placeholder="Enter User Name" 
-                          className="form-control" 
-                        />
-                        <ErrorMessage
-                          name="username"
-                          component="div"
-                          className="text-danger mt-2"
-                        />
-                      </div>
-
-                      <div className="form-group">
-                        <label htmlFor="email">Email</label>
-                        <Field 
-                          name="email" 
-                          type="email" 
-                          placeholder="Enter Email" 
-                          className="form-control"
-                        />
-                        <ErrorMessage
-                          name="email"
-                          component="div"
-                          className="text-danger mt-2"
-                        />
-                      </div>
-
-                      <div className="form-group">
-                        <label htmlFor="password">Password</label>
-                        <Field
-                          name="password"
-                          type="password" 
-                          placeholder="Enter Password"
-                          className="form-control"
-                        />
-                        <ErrorMessage
-                          name="password"
-                          component="div"
-                          className="text-danger mt-2"
-                        />
-                      </div>
-
-                      <div className="form-group">
-                        <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
-                      </div>
+                    <div className="form-group">
+                      <label htmlFor="username">Username</label>
+                      <Field 
+                        name="username" 
+                        type="text" 
+                        placeholder="Enter User Name" 
+                        className="form-control" 
+                      />
+                      <ErrorMessage
+                        name="username"
+                        component="div"
+                        className="text-danger mt-2"
+                      />
                     </div>
-                  )}
+
+                    <div className="form-group">
+                      <label htmlFor="email">Email</label>
+                      <Field 
+                        name="email" 
+                        type="email" 
+                        placeholder="Enter Email" 
+                        className="form-control"
+                      />
+                      <ErrorMessage
+                        name="email"
+                        component="div"
+                        className="text-danger mt-2"
+                      />
+                    </div>
+
+                    <div className="form-group">
+                      <label htmlFor="password">Password</label>
+                      <Field
+                        name="password"
+                        type="password" 
+                        placeholder="Enter Password"
+                        className="form-control"
+                      />
+                      <ErrorMessage
+                        name="password"
+                        component="div"
+                        className="text-danger mt-2"
+                      />
+                    </div>
+
+                    <div className="form-group">
+                      <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
+                    </div>
                 </Form>
               </Formik>
             </div>
@@ -154,10 +152,7 @@ const Register = () => {
 
       {message && (
         <div className="form-group">
-          <div
-            className={successful ? "alert alert-success" : "alert alert-danger"}
-            role="alert"
-          >
+          <div className="alert alert-danger" role="alert">
             {message}
           </div>
         </div>

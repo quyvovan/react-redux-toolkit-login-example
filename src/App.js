@@ -5,11 +5,11 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/App.scss";
 
+import Home from "./components/Home";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import Logout from "./components/Logout";
 import ForgotPassword from "./components/ForgotPassword";
-import Home from "./components/Home";
 import Profile from "./components/Profile";
 
 import { logout } from "./slices/auth";
